@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurum Travels</title>
+    <link rel="stylesheet" href="css/destination.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#">
+        <span class="brand-mark">🦅</span>
+        <span class="brand-text">AURUM <small>TRAVELS</small></span>
+      </a>
+      <nav class="menu">
+        <a href="#destinations">Destination</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+  <section class="hero_banner">
+  <div class="hero_text">
+    <h1>Travel Memories <br>You'll Never <span>Forget</span></h1>
+    <p>From local escapes to far-flung adventures, find what makes you happy anytime, anywhere</p>
+  </div>
+  <div class="hero_images">
+    <img src="imgs/img1.jpg" alt="First travel destination">
+    <img src="imgs/img2.png" alt="Second travel destination">
+  </div>
+</section>
+
+<section class="popular">
+  <h2>Popular things to do</h2>
+  <div class="popular_grid">
+    <div class="card large" style="background-image: url('imgs/bg.png');">
+      <span>Cruises</span>
+    </div>
+    <div class="card" style="background-image: url('imgs/img1.jpg');">
+      <span>Beach Tours</span>
+    </div>
+    <div class="card" style="background-image: url('imgs/img1.png');">
+      <span>City Tours</span>
+    </div>
+    <div class="card large" style="background-image: url('imgs/img2.png');">
+      <span>Museum Tour</span>
+    </div>
+    <div class="card" style="background-image: url('imgs/img3.png');">
+      <span>Food</span>
+    </div>
+    <div class="card" style="background-image: url('imgs/img5.png');">
+      <span>Hiking</span>
+    </div>
+  </div>
+
+  <div class="why_tourz">
+    <h2>Why choose Tourz</h2>
+    <div class="features">
+      <div class="feature">
+        <img src="imgs/icon1.png" alt="" class="icon">
+        <h3>Ultimate flexibility</h3>
+        <p>You're in control, with free cancellation and payment options to satisfy any plan or budget.</p>
+      </div>
+      <div class="feature">
+        <img src="imgs/icon2.png" alt="" class="icon">
+        <h3>Memorable experiences</h3>
+        <p>Browse and book tours and activities so incredible, you'll want to tell your friends.</p>
+      </div>
+      <div class="feature">
+        <img src="imgs/icon3.png" alt="" class="icon">
+        <h3>Quality at our core</h3>
+        <p>High-quality standards. Millions of reviews. A tourz company.</p>
+      </div>
+      <div class="feature">
+        <img src="imgs/icon4.png" alt="" class="icon">
+        <h3>Award-winning support</h3>
+        <p>New price? New plan? No problem. We're here to help, 24/7.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured" aria-labelledby="featured-trips-title">
+  <div class="features__inner">
+    <h2 id="featured-trips-title" class="features__title">Featured Trips</h2>
+
+    <div class="features__grid">
+      <!-- Card 1 (exact recognized text included) -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/bg.png"
+               alt="Centipede Tour - Guided Arizona Desert Tour by ATV"
+               width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true">
+            <span></span><span class="active"></span><span></span>
+          </div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Centipede Tour - Guided Arizona Desert Tour by ATV</h3>
+          <p class="trip-card__location">Arizona, USA</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <!-- inline SVG star -->
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/>
+            </svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img1.jpg" alt="Eiffel Highlights Tour" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Eiffel Highlights Tour</h3>
+          <p class="trip-card__location">Paris, France</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img1.png" alt="Statue of Liberty Cruise" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span></span><span class="active"></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Statue of Liberty Cruise</h3>
+          <p class="trip-card__location">New York, USA</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img2.png" alt="London Eye Fast Track" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span class="active"></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">London Eye Fast Track</h3>
+          <p class="trip-card__location">London, UK</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img3.png" alt="Coastal Boat Excursion" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span></span><span class="active"></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Coastal Boat Excursion</h3>
+          <p class="trip-card__location">Mediterranean</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img4.png" alt="Sunset Desert Safari" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Sunset Desert Safari</h3>
+          <p class="trip-card__location">Dubai, UAE</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img5.png" alt="City Museum Guided Tour" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span class="active"></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">City Museum Guided Tour</h3>
+          <p class="trip-card__location">Rome, Italy</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img4.png" alt="Guided Mountain Hike" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span></span><span class="active"></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Guided Mountain Hike</h3>
+          <p class="trip-card__location">Patagonia</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 9 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img3.png" alt="Local Cultural Festival Tour" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Local Cultural Festival Tour</h3>
+          <p class="trip-card__location">Various</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- card 10 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/bg.png"
+               alt="Centipede Tour - Guided Arizona Desert Tour by ATV"
+               width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true">
+            <span></span><span class="active"></span><span></span>
+          </div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Centipede Tour - Guided Arizona Desert Tour by ATV</h3>
+          <p class="trip-card__location">Arizona, USA</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <!-- inline SVG star -->
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/>
+            </svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 11 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img1.jpg" alt="Eiffel Highlights Tour" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span class="active"></span><span></span><span></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Eiffel Highlights Tour</h3>
+          <p class="trip-card__location">Paris, France</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 12 -->
+      <article class="trip-card">
+        <div class="trip-card__media">
+          <img src="imgs/img1.png" alt="Statue of Liberty Cruise" width="600" height="400">
+          <div class="trip-card__dots" aria-hidden="true"><span></span><span></span><span class="active"></span></div>
+        </div>
+        <div class="trip-card__body">
+          <h3 class="trip-card__title">Statue of Liberty Cruise</h3>
+          <p class="trip-card__location">New York, USA</p>
+          <div class="trip-card__rating" aria-label="Rated 4.8 out of 5 from 243 reviews">
+            <svg class="star" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .587l3.668 7.431L23.5 9.75l-5.75 5.606L19.337 24 12 20.015 4.663 24l1.587-8.644L.5 9.75l7.832-1.732z"/></svg>
+            <span class="score">4.8</span>
+            <span class="reviews">(243)</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="trending_destinations">
+  <h1>Trending Destinations</h1>
+  <div class="card_container">
+    <div class="card card_0">
+      <h3>Bali</h3>
+      <p>100+ Tours</p>
+    </div>
+    <div class="card card_1">
+      <h3>Roma</h3>
+      <P>100+ Tours</P>
+    </div>
+    <div class="card card_2">
+      <h3>Phukeyt</h3>
+      <p>100+ Tours</p>
+    </div>
+    <div class="card card_3">
+      <h3>Paris</h3>
+      <p>100+ Tours</p>
+    </div>
+  </div>
+</section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact-head">
+        <p class="section-eyebrow">contact</p>
+        <h2 class="section-title">CONTACT INFORMATION</h2>
+        <p class="section-subtitle">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="icon">📧</div>
+          <h3>Email</h3>
+          <p>info@aurumtravels.com</p>
+          <p>support@aurumtravels.com</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📞</div>
+          <h3>Phone</h3>
+          <p>+975 17123456</p>
+          <p>+975 77765432</p>
+        </div>
+        <div class="contact-card">
+          <div class="icon">📍</div>
+          <h3>Address</h3>
+          <p>Thimphu, Bhutan</p>
+          <p>1234 Norzin Lam, City Center</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
