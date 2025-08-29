@@ -1,3 +1,9 @@
+:root {
+  --bg-img: url('../imgs/dwatination.jpg');
+  --header-h: 72px;
+  --text: #111; /* default body text color */
+}
+
 * {
   box-sizing: border-box;
 }
@@ -17,18 +23,22 @@ body {
   margin-inline: auto;
 }
 
+/* =========================
+   HEADER (fixed over hero)
+   ========================= */
 .site-header {
-  position: absolute;
-  inset: 0 0 auto 0;
-  z-index: 20;
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 999;
   padding: 18px 0;
-  background-color: #fff8f5; /* light peach background */
+  background: transparent; 
 }
 
 .nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #fff;
 }
 
 .brand {
@@ -36,7 +46,7 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  color: black;
+  color: #fff;              /* override for contrast on hero */
   font-weight: 700;
   letter-spacing: .5px;
 }
@@ -49,9 +59,10 @@ body {
 .brand-text small {
   font-weight: 600;
   letter-spacing: 1.2px;
-  opacity: .85;
+  opacity: .95;
   margin-left: 4px;
   font-size: .7em;
+  color: #fff;              /* ensure visible on hero */
 }
 
 .menu {
@@ -60,10 +71,10 @@ body {
 }
 
 .menu a {
-  color: var(--text);
+  color: #fff;              /* override for contrast on hero */
   text-decoration: none;
   font-weight: 500;
-  opacity: .85;
+  opacity: .95;
 }
 
 .menu a:hover {
@@ -77,15 +88,20 @@ body {
   color: #fff;
   font-size: 1.4rem;
 }
-/* Hero Section */
+
+/* =========================
+   HERO SECTION
+   ========================= */
 .hero_banner {
-  display: flex;
-  justify-content: space-between;
+  padding-top: calc(50px + var(--header-h)); /* push content below fixed header */
+  background: linear-gradient(to bottom, rgba(0,0,0,.55), rgba(0,0,0,.75)), var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;                 /* center content nicely */
   align-items: center;
-  padding: 50px 70px;
-  background-color: #fff8f5; /* light peach background */
-  font-family: "Raleway", sans-serif;
-  margin-top: 2rem;
+  text-align: center;
+  justify-content: center;
 }
 
 .hero_text {
@@ -93,24 +109,132 @@ body {
   max-width: 50%;
 }
 
+/* ===== HERO OVERLAY TEXT UPGRADE ===== */
+.hero_text {
+  max-width: clamp(520px, 55vw, 780px);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  margin-top: -10rem;
+}
+
 .hero_text h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  color: #0c0c4d; /* deep navy */
-  line-height: 1.3;
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: 0.2px;
+  color: #fff;
+  text-shadow: 0 3px 20px rgba(0,0,0,0.45);
+
 }
 
 .hero_text h1 span {
-  color: #f15a24; /* orange highlight */
+  background: linear-gradient(90deg, #FF803C 0%, #FFD37A 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;                /* makes the gradient visible */
+  position: relative;
+}
+.hero_text h1 span::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  bottom: -0.2em;
+  height: 0.38em;
+  background: linear-gradient(90deg, #FF803C26, #FFD37A26);
+  border-radius: 8px;
+  filter: blur(0.5px);
 }
 
 .hero_text p {
-  margin-top: 16px;
-  font-size: 1rem;
-  color: #555;
-  line-height: 1.6;
+  margin-top: clamp(10px, 1.2vw, 14px);
+  font-size: clamp(0.98rem, 1.1vw, 1.15rem);
+  color: #f3f3f3;
+  opacity: 0.96;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.35);
+  max-width: 60ch;
 }
 
+/* Optional CTA buttons (use in HTML if needed)
+<div class="hero_actions">
+  <button class="btn btn-primary">Explore</button>
+  <button class="btn btn-ghost">Contact</button>
+</div>
+*/
+.hero_actions {
+  display: flex;
+  gap: 12px;
+  margin-top: clamp(16px, 2vw, 22px);
+  flex-wrap: wrap;
+}
+.btn {
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  font: inherit;
+  padding: 12px 18px;
+  border-radius: 12px;
+  transition: transform .15s ease, box-shadow .15s ease, background .2s ease, color .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn-primary {
+  background: linear-gradient(90deg, #FF803C, #FFB36A);
+  color: #1b1b1b;
+  box-shadow: 0 8px 20px rgba(255,128,60,0.35);
+}
+.btn-primary:hover {
+  box-shadow: 0 10px 24px rgba(255,128,60,0.45);
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.14);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero_banner {
+    /* center content in the viewport */
+    min-height: 100svh;                 /* account for mobile UI bars */
+    padding-top: var(--header-h);       /* avoid double top padding */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero_text {
+    max-width: 92%;
+    margin: 0 auto;                     /* center horizontally */
+    padding: 0 12px;
+    margin-top: 0 !important;           /* kill the -10rem */
+    align-items: center;                 /* center inner content */
+    text-align: center;
+  }
+
+  .hero_text h1 {
+    font-size: clamp(1.6rem, 6.2vw, 2.2rem);  /* friendlier on phones */
+  }
+
+  .hero_text p {
+    max-width: 36ch;                    /* keep lines readable */
+  }
+
+  /* Option A: hide hero images on phones */
+  .hero_images { display: none; }
+
+  /* Option B (if you want images visible): shrink and push below text
+  .hero_images {
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .hero_images img { width: 42%; height: auto; transform: none !important; }
+  */
+}
 .hero_images {
   flex: 1;
   display: flex;
@@ -132,29 +256,10 @@ body {
   height: 500px;
   width: 200px;
 }
-/* Responsive */
-@media (max-width: 900px) {
-  .hero_banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 40px 20px;
-  }
 
-  .hero_text {
-    max-width: 100%;
-  }
-
-  .hero_images {
-    margin-top: 20px;
-    justify-content: center;
-  }
-
-  .hero_images img {
-    width: 48%;
-  }
-}
-
-
+/* =========================
+   POPULAR SECTION
+   ========================= */
 .popular {
   padding: 60px 80px;
   font-family: "Raleway", sans-serif;
@@ -169,7 +274,6 @@ body {
   margin-bottom: 30px;
 }
 
-/* Popular cards grid */
 .popular_grid {
   display: grid;
   grid-template-columns: repeat(4, 2fr);
@@ -195,20 +299,13 @@ body {
   transition: transform 0.3s ease;
 }
 
-.card:hover {
-  transform: translateY(-5px);
-}
+.card:hover { transform: translateY(-5px); }
 
-.card.large {
-  grid-row: span 2; /* Make the first card taller */
-}
-
+.card.large { grid-row: span 2; }
 
 /* Why choose Tourz */
-.why_tourz {
-  width: 100%;
-  margin: 0 auto;
-}
+.why_tourz { width: 100%; margin: 0 auto; }
+
 .why_tourz h2 {
   font-size: 1.8rem;
   font-weight: 700;
@@ -222,13 +319,9 @@ body {
   gap: 50px;
 }
 
-.feature {
-  text-align: center;
-}
+.feature { text-align: center; }
 
-.feature .icon {
-  margin-bottom: 15px;
-}
+.feature .icon { margin-bottom: 15px; }
 
 .feature h3 {
   font-size: 1rem;
@@ -245,49 +338,30 @@ body {
 
 /* Responsive */
 @media (max-width: 1000px) {
-  .popular_grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .features {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .popular_grid { grid-template-columns: repeat(2, 1fr); }
+  .features { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media (max-width: 600px) {
-  .popular {
-    padding: 40px 20px;
-  }
-  .popular_grid {
-    grid-template-columns: 1fr;
-  }
-  .features {
-    grid-template-columns: 1fr;
-    text-align: left;
-  }
+  .popular { padding: 40px 20px; }
+  .popular_grid { grid-template-columns: 1fr; }
+  .features { grid-template-columns: 1fr; text-align: left; }
 }
 
-/* Section wrapper (off-white background like the screenshot) */
-.featured {
-  background: #fff;
-  padding: 57px 25px;
-}
+/* =========================
+   FEATURED TRIPS GRID
+   ========================= */
+.featured { background: #fff; padding: 57px 25px; }
 
-/* Centered max-width container */
-.features__container {
-  max-width: 100%;
-  margin: 0 auto;
-}
+.features__container { max-width: 100%; margin: 0 auto; }
 
-/* Title */
 .features__title {
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 24px 0;
-  color: #0b1f44; /* deep navy */
+  color: #0b1f44;
   font-weight: 800;
 }
 
-/* Grid: 4 columns on desktop, fluid down to 1 */
 .features__grid {
   display: grid;
   gap: 50px;
@@ -303,18 +377,16 @@ body {
 @media (max-width: 560px) {
   .features__grid { grid-template-columns: 1fr; }
 }
+
 /* Container / background */
 .features {
-  background: #f7f3ee; /* soft pastel background observed */
+  background: #f7f3ee;
   padding: 48px 16px;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   color: #111;
 }
 
-.features__inner {
-  max-width: 94%;
-  margin: 0 auto;
-}
+.features__inner { max-width: 94%; margin: 0 auto; }
 
 .features__title {
   margin: 0 0 20px 0;
@@ -325,11 +397,10 @@ body {
 
 .features__grid {
   display: grid;
-  gap: 50px; /* pick the gap size you want */
-  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 50px;
+  grid-template-columns: repeat(4, 1fr);
 }
 
-/* Responsive breakpoints */
 @media (max-width: 1100px) {
   .features__grid { grid-template-columns: repeat(3, 1fr); }
 }
@@ -339,7 +410,6 @@ body {
 @media (max-width: 560px) {
   .features__grid { grid-template-columns: 1fr; }
 }
-
 
 /* Card */
 .trip-card {
@@ -362,7 +432,7 @@ body {
 .trip-card__media {
   position: relative;
   width: 100%;
-  height: 160px; /* consistent card image height */
+  height: 160px;
   overflow: hidden;
   background: #eee;
 }
@@ -370,11 +440,11 @@ body {
 .trip-card__media img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* keeps vibrant color crop similar to image */
+  object-fit: cover;
   display: block;
 }
 
-/* Carousel dots overlay (subtle) */
+/* Carousel dots overlay */
 .trip-card__dots {
   position: absolute;
   left: 50%;
@@ -441,27 +511,23 @@ body {
   flex-shrink: 0;
 }
 
-.trip-card__rating .score {
-  font-weight: 700;
-}
+.trip-card__rating .score { font-weight: 700; }
 
 .trip-card__rating .reviews {
   color: #8a8a8a;
   font-weight: 500;
 }
 
-/* Section */
+/* =========================
+   TRENDING DESTINATIONS
+   ========================= */
 .trending_destinations {
   max-width: 100%;
   width: 92%;
   margin: 0 auto;
   padding: 40px 0;
   font-family: "Raleway", sans-serif;
-  background: linear-gradient(
-  to right,
-  #CD1A40,
-  #FF803C
-);
+  background: linear-gradient(to right, #CD1A40, #FF803C);
 }
 
 .trending_destinations h1 {
@@ -551,6 +617,9 @@ body {
   background: url("../imgs/img5.png") no-repeat center center/cover;
 }
 
+/* =========================
+   CONTACT
+   ========================= */
 .contact {
   background: #fff;
   color: #222;
@@ -621,6 +690,9 @@ body {
   color: #444;
 }
 
+/* =========================
+   RESPONSIVE NAV/HERO
+   ========================= */
 @media (max-width: 900px) {
   .menu { display: none; }
   .menu-toggle { display: block; }
