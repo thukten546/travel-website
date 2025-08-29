@@ -9,19 +9,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        <span class="brand-mark">🦅</span>
-        <span class="brand-text">AURUM <small>TRAVELS</small></span>
-      </a>
-      <nav class="menu">
-        <a href="#destinations">Destination</a>
-        <a href="./index.html">Contact Us</a>
-      </nav>
-      <button class="menu-toggle" aria-label="Open menu">☰</button>
-    </div>
-  </header>
+     <header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">🦅</span>
+      <span class="brand-text">AURUM <small>TRAVELS</small></span>
+    </a>
+
+    <!-- 👇 UPDATED: Added id for JavaScript targeting -->
+    <nav class="menu" id="mainMenu">
+      <a href="./destination.html">Destination</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+
+    <!-- 👇 UPDATED: aria-expanded added for accessibility -->
+    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
+</header>
   <section class="hero_banner">
   <div class="hero_text">
     <h1>Travel Memories <br>You'll Never <span>Forget</span></h1>
@@ -358,5 +362,17 @@
       </div>
     </div>
   </section>
+   <script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('mainMenu');
+
+  menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('open');
+
+    // Toggle aria-expanded for accessibility
+    const isOpen = menu.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', isOpen);
+  });
+</script>
 </body>
 </html>

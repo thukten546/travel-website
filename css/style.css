@@ -351,9 +351,45 @@ body {
 
 /* Tablet & down: nav + allow hero CTAs to wrap neatly */
 @media (max-width: 900px) {
-  .menu { display: none; }
-  .menu-toggle { display: block; }
-  .hero { background-attachment: scroll; }
+  .menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 18px;
+    background: rgba(0, 0, 0, 0.95);
+    padding: 16px;
+    border-radius: 8px;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 99;
+  }
+
+  .menu.open {
+    display: flex;
+  }
+
+  .menu a {
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: right;
+    padding: 8px 12px;
+    text-decoration: none;
+  }
+
+  .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
 
   .hero-content {
     display: flex;
