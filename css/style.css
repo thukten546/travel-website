@@ -34,23 +34,11 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: var(--text);
-  font-weight: 700;
-  letter-spacing: .5px;
+.brand img{
+  height: 100px;
+  width: 150px;
 }
-.brand-mark { font-size: 1.35rem; line-height: 1; }
-.brand-text small {
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  opacity: .85;
-  margin-left: 4px;
-  font-size: .7em;
-}
+
 .menu { display: flex; gap: 34px; }
 .menu a {
   color: var(--text);
