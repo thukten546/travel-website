@@ -338,6 +338,35 @@ body {
    ========================= */
 
 /* Tablet & down: nav + allow hero CTAs to wrap neatly */
+.site-footer {
+  position: relative;
+  background: url('../imgs/footer-bg.jpeg') center/cover no-repeat;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.site-footer .footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6); /* makes the image darker */
+}
+
+.site-footer .footer-content {
+  position: relative;
+  z-index: 1;
+}
+
+.site-footer a {
+  color: #f5c146; /* golden highlight */
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .menu {
     display: none;
@@ -350,8 +379,9 @@ body {
     flex-direction: column;
     gap: 16px;
     z-index: 99;
-  }
 
+  }
+  .site-footer { font-size: 0.9rem; }
   .menu.open {
     display: flex;
   }
