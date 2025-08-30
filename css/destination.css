@@ -41,28 +41,9 @@ body {
   color: #fff;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none;
-  color: #fff;              /* override for contrast on hero */
-  font-weight: 700;
-  letter-spacing: .5px;
-}
-
-.brand-mark {
-  font-size: 1.35rem;
-  line-height: 1;
-}
-
-.brand-text small {
-  font-weight: 600;
-  letter-spacing: 1.2px;
-  opacity: .95;
-  margin-left: 4px;
-  font-size: .7em;
-  color: #fff;              /* ensure visible on hero */
+.brand img{
+  height: 100px;
+  width: 150px;
 }
 
 .menu {
