@@ -385,6 +385,11 @@ body {
   .menu.open {
     display: flex;
   }
+  .brand img{
+    height: 60px;
+    width: 100px;
+  }
+
 
   .menu a {
     color: white;
